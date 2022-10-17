@@ -12,7 +12,10 @@ export class ClienteService {
   }
 
   create(createClienteDto: CreateClienteDto):Promise<Cliente> {
-    return this.repository.save(this.repository.create(createClienteDto))
+
+    let cliente = this.repository.create(createClienteDto)
+    cliente.admin = false
+    return this.repository.save(cliente)
   }
 
   findAll() {

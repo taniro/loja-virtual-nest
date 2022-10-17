@@ -8,4 +8,6 @@ export class Cliente {
     nome: string
     @Column()
     idade: number
+    @Column()
+    admin: boolean
 }
